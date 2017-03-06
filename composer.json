@@ -1,0 +1,17 @@
+{
+    "name": "mmcev106/simple-resource-manager",
+    "description": "A very simple PHP resource manager for adding CSS and JS resources to html using file modification time for cache busting.",
+    "keywords": ["css", "js", "resource", "manager", "management", "cache", "busting"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mark McEver",
+            "email": "mark@fastmail.net"
+        }
+    ],
+	"autoload": {
+        "psr-4": {
+            "Mmcev106\\SimpleResourceManager\\": "src/"
+        }
+    }
+}
