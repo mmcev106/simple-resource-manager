@@ -1,4 +1,4 @@
-<?php namespace Mmcev106\SimpleResourceManager;
+<?php namespace SimpleResourceManager;
 
 class SimpleResourceManager
 {
