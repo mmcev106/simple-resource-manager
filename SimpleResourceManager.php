@@ -1,6 +1,6 @@
 <?php
 
-class SimpleResourceBuster
+class SimpleResourceManager
 {
 	const WORDPRESS_PLUGINS_DIR = '/wp-content/plugins/';
 
