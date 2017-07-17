@@ -1,6 +1,6 @@
 {
     "name": "mmcev106/simple-resource-manager",
-    "description": "A very simple PHP resource manager for adding CSS and JS resources to html using file modification time for cache busting.",
+    "description": "A very simple PHP resource manager for adding CSS and JS resources to html or WordPress (via themes or plugins) using file modification time for cache busting.",
     "keywords": ["css", "js", "resource", "manager", "management", "cache", "busting"],
     "license": "MIT",
     "authors": [
@@ -10,8 +10,6 @@
         }
     ],
 	"autoload": {
-        "psr-4": {
-            "SimpleResourceManager\\": "src/"
-        }
+        "classmap": ["."]
     }
 }
