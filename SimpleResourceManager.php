@@ -31,14 +31,21 @@ class SimpleResourceManager
 
 	function add($relativePath, $deps = null)
 	{
-		$absolutePath = $this->baseDir . '/' . $relativePath;
-		if (!file_exists($absolutePath)) {
-			self::throwException("The specified file could not be found: $relativePath");
+		if(strpos($relativePath, 'http://') === 0 ||
+		   strpos($relativePath, 'https://') === 0){
+			$url = $relativePath;
+			$mtime = null; // Assume this is a versioned CDN url and requires no cache busting.
 		}
+		else{
+			$absolutePath = $this->baseDir . '/' . $relativePath;
+			if (!file_exists($absolutePath)) {
+				self::throwException("The specified file could not be found: $relativePath");
+			}
 
-		clearstatcache(true, $absolutePath);
-		$mtime = filemtime($absolutePath);
-		$url = "$this->baseUrl/$relativePath?$mtime";
+			clearstatcache(true, $absolutePath);
+			$mtime = filemtime($absolutePath);
+			$url = "$this->baseUrl/$relativePath?$mtime";
+		}
 
 		$extension = pathinfo($relativePath, PATHINFO_EXTENSION);
 
